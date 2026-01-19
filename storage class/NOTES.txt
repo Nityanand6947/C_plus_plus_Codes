@@ -1,0 +1,2 @@
+g++ External.cpp External2.cpp -o my_program //for compilation of both the cpp files
+my_program.exe // for the execution 

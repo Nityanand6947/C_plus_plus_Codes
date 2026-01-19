@@ -1,0 +1,74 @@
+
+Why Design Pattern
+-They give the developer a selection of tired and tested solutions to work with.
+-They are language neutral and so can be applied to any language that support object oriented.
+-They have a proven track record as they are already widely used and thus reduce the technical
+risk to the project.
+-They are highly flexible and can be used in practically any tpye of applciations or domain.
+
+***********************Types of Design pattern******************************
+		1.Creational Design pattern
+		2.Behavioral Design pattern
+		3.Structural Design pattern
+
+
+==========================================================================FACTORY DESIGN PATTERN========================================================================
+WHAT IS FDP(FACTORY DESIGN PATTERN)
+-It creates object for you, rather you initiaiting objects directly.
+-FDP is also know as "Virtual construtor.
+
+How to implement FDP.
+-Define an interface or an abstract class for creating and objects but let the subclasses
+decide which class to initiate.
+
+Advantages
+-Less code change if we change object creation process
+-We create object without exposing creation logic to the client
+-We get the benefits of virtual constructor
+
+========================================================================ABSTRACT DESIGN PATTERN===========================================================================
+-AFDP defines an abstract class for creating families of related objects but without specifying their concreate sub-class
+
+why/when to use AFDP
+-You need system to be independent of how objects are created,composed and represented.
+-Show interface not implemented.
+-System need to be configured with one of the mutiple familes of objects.
+
+==================================================================Singleton Pattern=========================================================================
+-Define a class that has only one instance and provides a global point of access that instance.
+
+Requirements 
+	-One and only one instance
+	-Global access
+	-No ownership
+	-Lazy initialization
+
+Advantages
+	1.Save memory
+	-only one is required so why to create so many
+
+	2.Single access point
+	-Logger,database connection
+
+	3.Flexibility
+	-Change anytime you want to.
+
+Usage
+	1.Multithreaded
+	-Threadpool
+
+	2.Database application
+	-logging
+
+	3.Configuration Settings
+	-game setting,application setting.etc
+
+How to create singleton class
+-To create we must have
+	static member
+	private constructor
+	static function
+=============================================================================Observer Design==========================================================================
+-Defines a one-to-many dependency between objects so that when one objects changes state,all its dependents are notified and updated automatically
+
+	

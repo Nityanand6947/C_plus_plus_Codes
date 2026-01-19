@@ -1,0 +1,56 @@
+===================================Trees=========================================
+Binary Trees
+1.Full Binary Trees
+    -Node should have either 0 or 2 children.
+2.Complete Binary Trees
+    -All levels are Completely filled except the last levels.
+    -The last levels has all nodes on left as possible.
+3.Perfect Binary Trees
+    -All leaf nodes are at same level
+4.Balanced Binary Trees
+    -height of the Trees at max should be log(N) [N: number of nodes,eg- n = 8 then log base 2 8 = 3 so the length should be 3]
+5.Degenerate Trees
+
+
+=======================Traversal Technique======================
+DFS(Depth-first-search)
+    -In-order Traversal(left-root-right)
+    -Pre-order Traversal(root-left-right)
+    -post-order Traversal(left-right-root)
+
+BFS(Breadth-first-search)
+    -level wise 
+
+
+Binary Search Trees
+    -L<N<R
+
+AVL Trees
+    -BF(Balance Factor) = height of LST - height of RST [And the value should be either -1,0,+1]
+
+=======================Graphs================================
+Two methods to represent a graph in computer:
+ 1.Adjacency matrix
+ 2.Adjacency list
+
+Suppose,If the edge is set to be 2 then:
+
+Adjacency Matrix for the Graph:
+  0  1  2  3
+0 0  2  2  0
+1 2  0  0  2
+2 2  0  0  2
+3 0  2  2  0
+
+Graphical representation of ambiguity
+    (0)
+   /   \
+ 2/     \2
+ (1)---2 (2)
+   \     /
+    \   /
+     (3)
+
+Path
+    -contains a lot of nodes and each of them are reachable.
+    -Total degree of graph - 2*Edge

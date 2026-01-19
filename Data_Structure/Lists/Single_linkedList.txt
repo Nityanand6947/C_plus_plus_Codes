@@ -1,0 +1,102 @@
+<======================INSERTION IN THE BEGINNING======================>
+ 
+    Node *Head;
+    // Head = new Node(4);
+    Head = NULL;
+
+    // cout << Head->data << endl;
+    // cout << Head->next << endl;
+
+    // Insertion the node at beginning
+
+    int arr[] = {2, 4, 6, 8, 10};
+    for (int i = 0; i < 5; i++)
+    {
+        // Linked List doesn't exist
+        if (Head == NULL)
+        {
+            Head = new Node(arr[i]);
+        }
+        // Linked List exist(insertion on head)
+        else
+        {
+            Node *temp; //This is temporary node 
+            temp = new Node(arr[i]); 
+            temp->next = Head;
+            Head = temp; //Here making temp as head
+        }
+    }
+
+    // print the value
+    Node *temp = Head;
+    while (temp != NULL)
+    {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+
+
+<=================================INSERTION AT THE END================================>
+ // Insertion the node at end
+    Node *Head = NULL;
+    //clsNode *tail = NULL;
+
+    int arr[] = {12, 13, 14, 15, 16};
+
+    for (int i = 0; i < 5; i++)
+    {
+        // Linked List doesn't exist
+        if (Head == NULL)
+        {
+            Head = new Node(arr[i]);
+        }
+        // Linked List exist(insertion on head)
+        else
+        {
+            [NOTE: THIS WILL INCREASE THE TIME COMPLEXITY BECAUSE OF LOOP FOR SEARCHING THE LAST ELEMENT]
+
+            Node *tail = Head;
+            while (tail->next != NULL)
+            {
+                tail = tail->next; //Here when tail will find the null the tail will pointing to the null
+            }
+                tail->next = new Node(arr[i]); //Here the node will get added to the tail where the pointer is pointing
+        }
+    }
+    // print the value
+    Node *current = Head;
+    while (current != NULL)
+    {
+        cout << current->data << " ";
+        current = current->next;
+    }
+
+--------------------THIS IS THE MODIFIED OF THE LOOP VERSION---------------------------------
+ Node *Head = NULL;
+    Node *tail = NULL;
+
+    int arr[] = {12, 13, 14, 15, 16};
+
+    for (int i = 0; i < 5; i++)
+    {
+        // Linked List doesn't exist
+        if (Head == NULL)
+        {
+            Head = new Node(arr[i]);
+            tail=Head;
+        }
+        // Linked List exist(insertion on head)
+        else
+        {
+            tail->next = new Node(arr[i]); //Here tail is already pointer to the last element 
+            tail = tail->next;
+        }
+    }
+    // print the value
+    Node *current = Head;
+    while (current != NULL)
+    {
+        cout << current->data << " ";
+        current = current->next;
+    }
+====================================INSERTION AT MIDDLE===========================================

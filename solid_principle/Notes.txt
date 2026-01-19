@@ -1,0 +1,146 @@
+Sure! Here are simplified examples for each principle:
+
+### 1. Liskov Substitution Principle (LSP)
+
+Example: Shape Area Calculation
+
+cpp
+#include <iostream>
+
+// Base class
+class Shape {
+public:
+    virtual double area() const = 0; // Pure virtual function
+};
+
+// Derived class: Rectangle
+class Rectangle : public Shape {
+private:
+    double width, height;
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+    double area() const override {
+        return width * height;
+    }
+};
+
+// Derived class: Square
+class Square : public Shape {
+private:
+    double side;
+public:
+    Square(double s) : side(s) {}
+    double area() const override {
+        return side * side;
+    }
+};
+
+void printArea(const Shape& shape) {
+    std::cout << "Area: " << shape.area() << std::endl;
+}
+
+int main() {
+    Rectangle rect(3, 4);
+    Square square(5);
+    
+    printArea(rect);   // Outputs: Area: 12
+    printArea(square); // Outputs: Area: 25
+}
+
+
+### 2. Interface Segregation Principle (ISP)
+
+Example: Animal Interfaces
+
+cpp
+#include <iostream>
+
+// Flyable interface
+class Flyable {
+public:
+    virtual void fly() = 0;
+};
+
+// Swimmable interface
+class Swimmable {
+public:
+    virtual void swim() = 0;
+};
+
+// Class that implements both interfaces
+class Duck : public Flyable, public Swimmable {
+public:
+    void fly() override {
+        std::cout << "Duck is flying!" << std::endl;
+    }
+    void swim() override {
+        std::cout << "Duck is swimming!" << std::endl;
+    }
+};
+
+// Class that implements only Swimmable
+class Fish : public Swimmable {
+public:
+    void swim() override {
+        std::cout << "Fish is swimming!" << std::endl;
+    }
+};
+
+int main() {
+    Duck duck;
+    Fish fish;
+    
+    duck.fly(); // Outputs: Duck is flying!
+    duck.swim(); // Outputs: Duck is swimming!
+    
+    fish.swim(); // Outputs: Fish is swimming!
+}
+
+
+### 3. Dependency Inversion Principle (DIP)
+
+Example: User and Database
+
+cpp
+#include <iostream>
+
+// Abstract database interface
+class IDatabase {
+public:
+    virtual void save(const std::string& data) = 0;
+};
+
+// Concrete database implementation
+class MySQLDatabase : public IDatabase {
+public:
+    void save(const std::string& data) override {
+        std::cout << "Saving '" << data << "' to MySQL database." << std::endl;
+    }
+};
+
+// User class depends on the abstraction
+class User {
+private:
+    IDatabase& db;
+public:
+    User(IDatabase& database) : db(database) {}
+    void saveData(const std::string& data) {
+        db.save(data);
+    }
+};
+
+int main() {
+    MySQLDatabase mySQL;
+    User user(mySQL);
+    
+    user.saveData("User info"); // Outputs: Saving 'User info' to MySQL database.
+}
+
+
+### Summary of Examples
+
+- LSP: The `printArea` function can take any `Shape`, whether it's a `Rectangle` or a `Square`, and calculate the area correctly.
+
+- ISP: The `Duck` class implements both `Flyable` and `Swimmable`, while the `Fish` class only implements `Swimmable`. This avoids forcing classes to implement unnecessary methods.
+
+- DIP: The `User` class depends on the `IDatabase` interface rather than a specific database implementation. This allows for flexibility in changing database types without modifying the `User` class.

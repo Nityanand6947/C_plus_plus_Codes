@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "MSYS2",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/msys64/ucrt64/include/**",  // MSYS2 include paths
+                "C:/msys64/mingw64/include/**"  // Optional: for mingw-specific headers
+            ],
+            "defines": [],
+            "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",  // Switch to C++17 or C++11 if you encounter issues with C++23
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
