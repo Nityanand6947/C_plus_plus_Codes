@@ -6,6 +6,7 @@ using namespace std;
 void push_backDemo(string name3,string name4){
 for(int i=0;name4[i]!='\0';i++){
     name3.push_back(name4[i]);
+    name3.
 }
 cout<<"\nAfter push Back ";
     cout<<name3;
